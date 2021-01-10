@@ -1,5 +1,3 @@
-let div = document.createDocumentFragment()
-
 function deleteTask(id){
     console.log(id)
     const formData = new FormData()
@@ -25,6 +23,7 @@ fetch('http://localhost:5000/tasksList', {
    })
 .then(response => response.json())
 .then(data => {
+    let div = document.createDocumentFragment()
     data.payload.tasks.forEach(task => {
         let divTask = document.createElement("DIV")
         divTask.className = "task"
